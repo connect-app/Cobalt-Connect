@@ -4,7 +4,7 @@
 
     <groupId>com.github.connect-app</groupId>
     <artifactId>cobalt-connect</artifactId>
-    <version>0.0.6</version>
+    <version>0.0.7</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Standalone fully-featured Whatsapp Web API for Java and Kotlin</description>
     <url>https://github.com/connect-app/cobalt-connect</url>
