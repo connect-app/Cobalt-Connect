@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.connect-app</groupId>
-    <artifactId>Cobalt-Connect</artifactId>
+    <artifactId>cobalt-connect</artifactId>
     <version>0.0.6</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Standalone fully-featured Whatsapp Web API for Java and Kotlin</description>
