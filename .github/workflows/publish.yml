@@ -27,14 +27,14 @@ jobs:
                   <servers>
                     <server>
                       <id>github</id>
-                      <username>${{ github.actor }}</username>
-                      <password>${{ secrets.GITHUB_TOKEN }}</password>
+                      <username>${{ secrets.NAME }}</username>
+                      <password>${{ secrets.TOKEN }}</password>
                     </server>
                   </servers>
                 </settings>" > ${{ github.workspace }}/settings.xml
         env:
-          NAME: ${{ github.actor }}
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NAME: ${{ secrets.NAME }}
+          TOKEN: ${{ secrets.TOKEN }}
 
       - name: Build and deploy
         run: mvn clean deploy -DskipTests --settings ${{ github.workspace }}/settings.xml
