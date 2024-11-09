@@ -1,0 +1,40 @@
+name: Publish to GitHub Packages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Create settings.xml
+        run: |
+          echo "<settings>
+                  <servers>
+                    <server>
+                      <id>github</id>
+                      <username>${{ github.actor }}</username>
+                      <password>${{ secrets.GITHUB_TOKEN }}</password>
+                    </server>
+                  </servers>
+                </settings>" > ${{ github.workspace }}/settings.xml
+        env:
+          NAME: ${{ github.actor }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and deploy
+        run: mvn clean deploy -DskipTests --settings ${{ github.workspace }}/settings.xml
