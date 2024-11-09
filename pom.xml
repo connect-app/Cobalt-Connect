@@ -7,7 +7,7 @@
     <version>0.0.6</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Standalone fully-featured Whatsapp Web API for Java and Kotlin</description>
-    <url>https://github.com/connect-app/Cobalt-Connect</url>
+    <url>https://github.com/connect-app/cobalt-connect</url>
 
     <licenses>
         <license>
@@ -21,7 +21,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/connect-app/Cobalt-Connect</url>
+            <url>https://maven.pkg.github.com/connect-app/cobalt-connect</url>
         </repository>
     </distributionManagement>
 
@@ -85,9 +85,9 @@
                         <configuration>
                             <annotationProcessorPaths>
                                 <annotationProcessorPath>
-                                    <groupId>${groupId}</groupId>
-                                    <artifactId>${artifactId}</artifactId>
-                                    <version>${version}</version>
+                                    <groupId>com.github.auties00</groupId>
+                                    <artifactId>cobalt</artifactId>
+                                    <version>0.0.6</version>
                                 </annotationProcessorPath>
                             </annotationProcessorPaths>
                             <annotationProcessors>
